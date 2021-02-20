@@ -1,10 +1,11 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: "GraphQL Asia",
+    author: {
+      name: "Tamas Piros",
+      bio:
+        "Tamas is a Google Developer Expert in Web Technologies and a seasoned Developer Evangelist. He is a passionate advocate for modern web technologies, helping people understand and unlock the latest & greatest features of web development.",
+    },
+  },
+  plugins: [`gatsby-plugin-postcss`],
 }
