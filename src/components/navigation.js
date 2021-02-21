@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 export default function Navigation() {
   return (
@@ -6,9 +7,12 @@ export default function Navigation() {
       <div className="flex flex-col container mx-auto md:flex-row md:items-center md:justify-between">
         <div className="flex justify-between items-center">
           <div>
-            <a href="#" className="text-gray-800 text-xl font-bold md:text-2xl">
+            <Link
+              to="/"
+              className="text-gray-800 text-xl font-bold md:text-2xl"
+            >
               Brand
-            </a>
+            </Link>
           </div>
           <div>
             <button
@@ -22,24 +26,18 @@ export default function Navigation() {
           </div>
         </div>
         <div className="md:flex flex-col md:flex-row md:-mx-4 hidden">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0"
           >
             Home
-          </a>
-          <a
-            href="#"
-            className="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0"
-          >
-            Blog
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="about"
             className="my-1 text-gray-800 hover:text-blue-500 md:mx-4 md:my-0"
           >
             About us
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
