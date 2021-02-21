@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "GraphQL Asia",
@@ -17,5 +21,6 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-cloudinary`,
   ],
 }

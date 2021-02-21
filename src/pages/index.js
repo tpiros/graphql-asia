@@ -5,6 +5,7 @@ import Authors from "../components/authors"
 import Footer from "../components/footer"
 import { graphql } from "gatsby"
 import Helm from "../components/helm"
+import Image from "gatsby-image"
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
