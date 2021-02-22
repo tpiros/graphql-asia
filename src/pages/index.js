@@ -5,7 +5,6 @@ import Authors from "../components/authors"
 import Footer from "../components/footer"
 import { graphql } from "gatsby"
 import Helm from "../components/helm"
-import Image from "gatsby-image"
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
@@ -57,6 +56,16 @@ export const pageQuery = graphql`
           title
           intro
           author
+          authorPhoto {
+            fixed(transformations: "f_auto,q_auto,c_thumb,g_face,w_50,h_50") {
+              src
+            }
+          }
+          coverPhoto {
+            fixed(transformations: "f_auto,q_auto,c_fit,w_800") {
+              src
+            }
+          }
         }
       }
     }

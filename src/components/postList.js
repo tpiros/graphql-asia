@@ -4,11 +4,16 @@ import { Link } from "gatsby"
 export default function PostList({ data }) {
   return (
     <div className="mt-6">
-      <img
-        className="object-cover h-48 w-full rounded-t-lg"
-        src="https://res.cloudinary.com/tamas-demo/image/upload/colombia-flag.jpg"
-        alt="test"
-      />
+      {data.frontmatter.coverPhoto ? (
+        <img
+          className="object-cover h-40 w-full rounded-t-lg"
+          src={data.frontmatter.coverPhoto.fixed.src}
+          alt="GraphQL Asia"
+        />
+      ) : (
+        <></>
+      )}
+
       <div className="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
         <div className="flex justify-between items-center">
           <span className="font-light text-gray-600">
@@ -28,7 +33,12 @@ export default function PostList({ data }) {
           <Link to={data.fields.slug} className="text-blue-500 hover:underline">
             Read more
           </Link>
-          <div>
+          <div class="flex items-center">
+            <img
+              src={data.frontmatter.authorPhoto.fixed.src}
+              alt="avatar"
+              class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
+            />
             <h1 className="text-gray-700 font-bold">
               {data.frontmatter.author}
             </h1>

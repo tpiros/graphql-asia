@@ -32,9 +32,20 @@ const BlogTemplate = ({ data }) => {
                     }}
                     className="mt-2 text-gray-600"
                   />
+                  <img
+                    src={data.markdownRemark.frontmatter.blogPhoto.fixed.src}
+                    alt="GraphQL Asia"
+                  />
                 </div>
                 <div className="flex justify-between items-center mt-4">
                   <div className="flex items-center">
+                    <img
+                      src={
+                        data.markdownRemark.frontmatter.authorPhoto.fixed.src
+                      }
+                      alt="avatar"
+                      class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
+                    />
                     <h1 className="text-gray-700 font-bold">
                       {data.markdownRemark.frontmatter.author}
                     </h1>
@@ -68,6 +79,18 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         intro
         author
+        authorPhoto {
+          fixed(transformations: "f_auto,q_auto,c_thumb,g_face,w_50,h_50") {
+            src
+          }
+        }
+        blogPhoto {
+          fixed(
+            transformations: "f_auto,q_auto,g_auto:refrigerator,h_800,w_400,c_crop"
+          ) {
+            src
+          }
+        }
       }
     }
   }
