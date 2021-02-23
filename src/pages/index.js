@@ -5,13 +5,6 @@ import PostList from "../components/postList"
 import Authors from "../components/authors"
 
 const PageIndex = () => {
-  const posts = [
-    {
-      id: 1,
-      title: "Hello",
-    },
-    { id: 2, title: "Yo" },
-  ]
   return (
     <Layout>
       <Navigation />
@@ -23,47 +16,7 @@ const PageIndex = () => {
                 Post
               </h1>
             </div>
-            {posts.map(post => {
-              return <PostList data={post} />
-            })}
-            <div className="mt-8">
-              <div className="flex">
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 bg-white text-gray-500 font-medium rounded-md cursor-not-allowed"
-                >
-                  previous
-                </a>
-
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:bg-blue-500 hover:text-white rounded-md"
-                >
-                  1
-                </a>
-
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:bg-blue-500 hover:text-white rounded-md"
-                >
-                  2
-                </a>
-
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:bg-blue-500 hover:text-white rounded-md"
-                >
-                  3
-                </a>
-
-                <a
-                  href="#"
-                  className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:bg-blue-500 hover:text-white rounded-md"
-                >
-                  Next
-                </a>
-              </div>
-            </div>
+            <PostList />
           </div>
           <div className="-mx-8 w-4/12 hidden lg:block">
             <div className="px-8">
