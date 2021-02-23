@@ -33,7 +33,7 @@ const BlogTemplate = ({ data }) => {
                     className="mt-2 text-gray-600"
                   />
                   <img
-                    src={data.markdownRemark.frontmatter.blogPhoto.fixed.src}
+                    src={data.markdownRemark.frontmatter.blogPhoto?.fixed.src}
                     alt="GraphQL Asia"
                   />
                 </div>
