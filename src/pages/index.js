@@ -3,11 +3,9 @@ import Layout from "../components/layout"
 import PostList from "../components/postList"
 import Authors from "../components/authors"
 import Footer from "../components/footer"
-import { graphql } from "gatsby"
 import Helm from "../components/helm"
 
-const IndexPage = ({ data }) => {
-  const posts = data.allMarkdownRemark.nodes
+const IndexPage = () => {
   return (
     <Layout>
       <Helm />
@@ -19,9 +17,7 @@ const IndexPage = ({ data }) => {
                 Post
               </h1>
             </div>
-            {posts.map(post => {
-              return <PostList key={post.fields.slug} data={post} />
-            })}
+            <PostList />
           </div>
           <div className="-mx-8 w-4/12 hidden lg:block">
             <div className="px-8">
@@ -37,27 +33,3 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          intro
-          author
-        }
-      }
-    }
-  }
-`
